@@ -104,7 +104,7 @@ int main(int argc, char **argv)
                 }
 
                 // Frequencies
-                for (uint32_t i = 1; i < BUFFER_SIZE / 8; i++) {
+                for (uint32_t i = 1; i < BUFFER_SIZE / 4; i++) {
                         float magnitude = cabsf(g_frequencies[i]);
                         if (magnitude > prominent_magnitude) {
                                 prominent_magnitude = magnitude;
@@ -115,7 +115,7 @@ int main(int argc, char **argv)
                                 barHeight = 1;
                         }
                         float drawWidth = barWidth < 1 ? 1 : barWidth;
-                        DrawRectangle(drawWidth * i * 8, (height - barHeight) / 2, barWidth, barHeight, GREEN);
+                        DrawRectangle(drawWidth * i * 4, (height - barHeight) / 2, barWidth, barHeight, GREEN);
                 }
                 EndDrawing();
         }
